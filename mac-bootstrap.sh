@@ -325,6 +325,11 @@ fi
 # ==============================================================================================================
 echo "Creating additional folder structure ..."
 
+echo "Start from home: $HOME"
+
+# Make sure we are in the home directory
+cd ${HOME}
+
 [[ ! -d Repository ]] && mkdir Repository
 [[ ! -d Tools ]] && mkdir Tools
 [[ ! -d Data ]] && mkdir Data
