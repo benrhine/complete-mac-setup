@@ -1,6 +1,7 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # ==============================================================================================================
 # Configure iTerm color profiles
+# - https://github.com/mbadolato/iTerm2-Color-Schemes 
 # ==============================================================================================================
 echo "Switching to local repository directory ..."
 cd $HOME/Repository
@@ -23,3 +24,6 @@ tools/import-scheme.sh 'SpaceGray Eighties'                     # by scheme name
 tools/import-scheme.sh Molokai 'SpaceGray Eighties'             # import multiple
 
 echo "iTerm color schemes installed"
+
+# Make sure we return to the home directory - If we dont this causes an issue to where items are checked out to.
+cd $HOME

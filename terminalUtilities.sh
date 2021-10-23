@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # ==============================================================================================================
 # Unix / Linux command line utilities to install
 # Some of these may be unnecessary but they are small and its nice to just get everything installed

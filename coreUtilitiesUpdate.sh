@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # ==============================================================================================================
 # Updates: Update core utilities on macOS to the latest versions (those that come with OS X are outdated)
 #

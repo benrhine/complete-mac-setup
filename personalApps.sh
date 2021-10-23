@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # ==============================================================================================================
 # General / Personal applications we want installed
 # Extras I want sometime
@@ -12,7 +12,6 @@ APPLICATIONS=(
     obs
     parallels
     rambox
-    sublime-text
     transmit
     twitch
 )

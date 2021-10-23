@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # ==============================================================================================================
 # Install OH MY ZSH Plugins
 # - https://github.com/zsh-users/zsh-syntax-highlighting
@@ -16,7 +16,7 @@
 # inspecting the directory and seeing that it is NOT read only and attempting additional chmod and chown commands
 # still result in an error claiming the directory structure is locked, thus resulting in the bloated syntax below.
 # ==============================================================================================================
-cd ${HOME}/.oh-my-zsh/custom/plugins
+cd $HOME/.oh-my-zsh/custom/plugins
 
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
@@ -24,7 +24,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions.git
 
 git clone https://github.com/matthieusb/zsh-sdkman.git
 
-cd ../themes
+cd $HOME/.oh-my-zsh/custom/themes
 
 git clone https://github.com/bhilburn/powerlevel9k.git
 

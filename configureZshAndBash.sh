@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # ==============================================================================================================
 # Configure ZSH (and Bash Profile [Just in case])
 # This will pull down a MASSIVE .bash_profile from https://github.com/benrhine/bashConfigWithGit and an even 

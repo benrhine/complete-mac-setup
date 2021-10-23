@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # ==============================================================================================================
 # Configure OSX
 # - https://macos-defaults.com/dock/autohide.html
@@ -85,5 +85,33 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryCli
 #defaults -currentHost write NSGlobalDomain com.apple.trackpad.threeFingerHorizSwipeGesture -int 1
 #defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
 # ==============================================================================================================
+
+#Turns on show Hard Disks, External disks, CDs, DVDs, and iPads, and Connected Servers
+
+#defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true;
+
+#defaults write com.apple.finder ShowHardDrivesOnDesktop -bool true;
+
+#defaults write com.apple.finder ShowMountedServersOnDesktop -bool true;
+
+#defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true;
+
+
+#Shows Tab View
+
+/usr/bin/defaults write com.apple.finder ShowTabView -bool true;
+
+#Changes Finder to List View
+#Four-letter codes for the other view modes: 'icnv', 'clmv', 'Flwv'
+
+/usr/bin/defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+#New Finder windows now opens in /Users/<username>
+
+/usr/bin/defaults write com.apple.finder NewWindowTarget -string "PfHm"
+
+
+# Restart Finder to pick up changes
+killall Finder
 
 echo "macOS configuration complete"

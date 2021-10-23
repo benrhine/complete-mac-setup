@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # ==============================================================================================================
 # Homebrew: Check for existing install, install if not present
 # - https://brew.sh

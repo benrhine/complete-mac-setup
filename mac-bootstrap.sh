@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # 
 # Bootstrap script for setting up a new OSX machine
 # 
@@ -43,13 +43,10 @@
 # - https://www.xmodulo.com/catch-handle-errors-bash.html
 # - https://newbedev.com/is-there-a-try-catch-command-in-bash
 # - https://medium.com/@Dylan.Wang/install-colorls-on-macos-mojave-10-14-6-970834959cdb - install colorls
-
-# ==============================================================================================================
-# Configure host file after install use
-# - https://winhelp2002.mvps.org/hosts.txt
-# ==============================================================================================================
-
-
+#- https://stackoverflow.com/questions/54818827/install-colorls-on-macos-and-zsh
+# - https://community.jamf.com/t5/jamf-pro/finder-settings-script/td-p/186534
+# - https://scriptingosx.com/2019/08/moving-to-zsh-part-8-scripting-zsh/
+# - https://stackoverflow.com/questions/1401482/yyyy-mm-dd-format-date-in-shell-script
 # ==============================================================================================================
 # Simple error handler
 # ==============================================================================================================
@@ -58,6 +55,9 @@ simpleError() {
 }
 
 export START_TIME=$(($(date +%s)))
+export NUMBER_OF_STEPS=26
+export SCRIPT_DIR=$HOME/Desktop/complete-mac-setup
+
 echo "Starting bootstrapping at $START_TIME"
 # ==============================================================================================================
 # Handle Script Options
@@ -148,13 +148,24 @@ echo "Include VPN support: $vpnSupport";
 echo "Include all dev installs: $devInstall";
 
 # ==============================================================================================================
-# Homebrew: Check for existing install, install if not present
+# 1) Homebrew: Check for existing install, install if not present
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/brewInstall.sh
 # ==============================================================================================================
+
+echo "Executing step 1 of $NUMBER_OF_STEPS"
+
 source brewInstall.sh
 
 # ==============================================================================================================
-# Updates: Update outdated utilities
+# 2) Updates: Update outdated utilities
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/coreUtilitiesUpdate.sh
 # ==============================================================================================================
+
+echo "Executing step 2 of $NUMBER_OF_STEPS"
 
 if [ $coreUtilitiesUpdate == TRUE ]; then
     source coreUtilitiesUpdate.sh
@@ -163,8 +174,13 @@ else
 fi
 
 # ==============================================================================================================
-# Unix / Linux command line utilities to install
+# 3) Unix / Linux command line utilities to install
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/terminalUtilities.sh
 # ==============================================================================================================
+
+echo "Executing step 3 of $NUMBER_OF_STEPS"
 
 if [ $terminalUtilities == TRUE ]; then
     source terminalUtilities.sh
@@ -173,8 +189,13 @@ else
 fi
 
 # ==============================================================================================================
-# Scripting language support for local environment
+# 4) Scripting language support for local environment
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/languageSupport.sh
 # ==============================================================================================================
+
+echo "Executing step 4 of $NUMBER_OF_STEPS"
 
 if [ $languageSupport == TRUE ]; then
     source languageSupport.sh
@@ -183,8 +204,13 @@ else
 fi
 
 # ==============================================================================================================
-# Vcs support: Git, Mercurial, SVN
+# 5) Vcs support: Git, Mercurial, SVN
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/vcsSupport.sh
 # ==============================================================================================================
+
+echo "Executing step 5 of $NUMBER_OF_STEPS"
 
 if [ $vcsSupport == TRUE ]; then
     source vcsSupport.sh
@@ -193,8 +219,13 @@ else
 fi
 
 # ==============================================================================================================
-# Support for AWS and GCP
+# 6) Support for AWS and GCP
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/cloudSupport.sh
 # ==============================================================================================================
+
+echo "Executing step 6 of $NUMBER_OF_STEPS"
 
 if [ $cloudSupport == TRUE ]; then
     source cloudSupport.sh
@@ -203,8 +234,10 @@ else
 fi
 
 # ==============================================================================================================
-# Clean up brew installs
+# 7) Clean up brew installs
 # ==============================================================================================================
+
+echo "Executing step 7 of $NUMBER_OF_STEPS"
 
 echo "Cleaning up brew installs ..."
 
@@ -213,8 +246,13 @@ brew cleanup
 echo "Brew installs cleaned"
 
 # ==============================================================================================================
-# Personal Utilities
+# 8) Personal Utilities
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/personalUtilities.sh
 # ==============================================================================================================
+
+echo "Executing step 8 of $NUMBER_OF_STEPS"
 
 if [ $personalUtils == TRUE ]; then
     source personalUtilities.sh
@@ -223,8 +261,13 @@ else
 fi
 
 # ==============================================================================================================
-# General / Personal applications we want installed
+# 9) General / Personal applications we want installed
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/personalApps.sh
 # ==============================================================================================================
+
+echo "Executing step 9 of $NUMBER_OF_STEPS"
 
 if [ $personalApps == TRUE ]; then
     source personalApps.sh
@@ -233,8 +276,13 @@ else
 fi
 
 # ==============================================================================================================
-# Install additional browsers
+# 10) Install additional browsers
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/browserSupport.sh
 # ==============================================================================================================
+
+echo "Executing step 10 of $NUMBER_OF_STEPS"
 
 if [ $browsersSupport == TRUE ]; then
     source browserSupport.sh
@@ -242,8 +290,13 @@ else
     echo "Excluding third party browsers ..."
 fi
 # ==============================================================================================================
-# Install VPNs
+# 11) Install VPNs
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/vpnSupport.sh
 # ==============================================================================================================
+
+echo "Executing step 11 of $NUMBER_OF_STEPS"
 
 if [ $vpnSupport == TRUE ]; then
     source vpnSupport.sh
@@ -252,8 +305,13 @@ else
 fi
 
 # ==============================================================================================================
-# Install Developer Tools
+# 12) Install Developer Tools
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/developerSupport.sh
 # ==============================================================================================================
+
+echo "Executing step 12 of $NUMBER_OF_STEPS"
 
 if [ $developerSupport == TRUE ]; then
     source developerSupport.sh
@@ -262,8 +320,13 @@ else
 fi
 
 # ==============================================================================================================
-# Install Games and Game Stores
+# 13) Install Games and Game Stores
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/gameSupport.sh
 # ==============================================================================================================
+
+echo "Executing step 13 of $NUMBER_OF_STEPS"
 
 if [ $gameSupport == TRUE ]; then
     source gameSupport.sh
@@ -272,8 +335,13 @@ else
 fi
 
 # ==============================================================================================================
-# Install Additional Fonts
+# 14) Install Additional Fonts
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/additionalFonts.sh
 # ==============================================================================================================
+
+echo "Executing step 14 of $NUMBER_OF_STEPS"
 
 if [ $additionalFonts == TRUE ]; then
     source additionalFonts.sh
@@ -282,8 +350,13 @@ else
 fi
 
 # ==============================================================================================================
-# Install Python
+# 15) Install Python
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/pythonPackages.sh
 # ==============================================================================================================
+
+echo "Executing step 15 of $NUMBER_OF_STEPS"
 
 if [ $pythonPackages == TRUE ]; then
     source pythonPackages.sh
@@ -292,8 +365,13 @@ else
 fi
 
 # ==============================================================================================================
-# Install Ruby Gems
+# 16) Install Ruby Gems
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/rubyGems.sh
 # ==============================================================================================================
+
+echo "Executing step 16 of $NUMBER_OF_STEPS"
 
 if [ $rubyGems == TRUE ]; then
     source rubyGems.sh
@@ -302,8 +380,11 @@ else
 fi
 
 # ==============================================================================================================
-# Install Npm
+# 17) Install Npm
 # ==============================================================================================================
+
+echo "Executing step 17 of $NUMBER_OF_STEPS"
+
 echo "Installing global npm packages ..."
 
 npm install marked -g
@@ -311,8 +392,13 @@ npm install marked -g
 echo "NPM Installed"
 
 # ==============================================================================================================
-# Configure macOS
+# 18) Configure macOS
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/macOsConfig.sh
 # ==============================================================================================================
+
+echo "Executing step 18 of $NUMBER_OF_STEPS"
 
 if [ $macOsConfig == TRUE ]; then
     source macOsConfig.sh
@@ -321,14 +407,12 @@ else
 fi
 
 # ==============================================================================================================
-# Create Additional Directories
+# 19) Create Additional Directories
 # ==============================================================================================================
+
+echo "Executing step 19 of $NUMBER_OF_STEPS"
+
 echo "Creating additional folder structure ..."
-
-echo "Start from home: $HOME"
-
-# Make sure we are in the home directory
-cd ${HOME}
 
 [[ ! -d Repository ]] && mkdir Repository
 [[ ! -d Tools ]] && mkdir Tools
@@ -341,15 +425,22 @@ mysides add example file:///$HOME/Tools
 mysides add example file:///$HOME/Data
 
 # ==============================================================================================================
-# Install OH MY ZSH
+# 20) Install OH MY ZSH
 # - https://github.com/ohmyzsh/ohmyzsh#unattended-install
 # ==============================================================================================================
+
+echo "Executing step 20 of $NUMBER_OF_STEPS"
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # ==============================================================================================================
-# Install OH MY ZSH Plugins
+# 21) Install OH MY ZSH Plugins
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/ohMyZshPlugins.sh
 # ==============================================================================================================
+
+echo "Executing step 21 of $NUMBER_OF_STEPS"
 
 if [ $ohMyZshPlugins == TRUE ]; then
     source ohMyZshPlugins.sh
@@ -358,28 +449,50 @@ else
 fi
 
 # ==============================================================================================================
-# Configure Bash Profile (Just in case) and zshrc
+# 22) Configure Bash Profile (Just in case) and zshrc
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/configureZshAndBash.sh
 # ==============================================================================================================
 
+echo "Executing step 22 of $NUMBER_OF_STEPS"
+
 if [ $configureZshAndBash == TRUE ]; then
+    # Make sure parent script can see child scripts otherwise they will fail to run
+    cd $SCRIPT_DIR
+
     source configureZshAndBash.sh
 else
     echo "Excluding ZSH and Bash configs ..."
 fi
 
+ls -alh
 # ==============================================================================================================
-# Configure iTerm color profiles
+# 23) Configure iTerm color profiles
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/iTermColorSchemes.sh
 # ==============================================================================================================
 
+echo "Executing step 23 of $NUMBER_OF_STEPS"
+
 if [ $iTermColorSchemes == TRUE ]; then
+    # Make sure parent script can see child scripts otherwise they will fail to run
+    cd $SCRIPT_DIR
+    
     source iTermColorSchemes.sh
 else
     echo "Excluding iTerm color schemes ..."
 fi
 
 # ==============================================================================================================
-# Install SDKMAN!
+# 24) Install SDKMAN!
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/installSDKMAN.sh
 # ==============================================================================================================
+
+echo "Executing step 24 of $NUMBER_OF_STEPS"
 
 if [ $installSDKMAN == TRUE ]; then
     source installSDKMAN.sh
@@ -388,14 +501,30 @@ else
 fi
 
 # ==============================================================================================================
-# Install SDKMAN!
+# 25) Install SDKMAN!
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/sdkPackageInstalls.sh
 # ==============================================================================================================
+
+echo "Executing step 25 of $NUMBER_OF_STEPS"
 
 if [ $sdkPackageInstalls == TRUE ]; then
     source sdkPackageInstalls.sh
 else
     echo "Excluding Java / Maven / Gradle installs  ..."
 fi
+
+# ==============================================================================================================
+# 26) Install host file
+#
+# Alternate source import:
+# - source $HOME/YOUR-PATH/complete-mac-setup/configureHosts.sh
+# ==============================================================================================================
+
+echo "Executing step 26 of $NUMBER_OF_STEPS"
+
+source configureHosts.sh
 
 echo "Bootstrapping complete, final step ..."
 

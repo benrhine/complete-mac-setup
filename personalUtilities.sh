@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 # ==============================================================================================================
 # Personal Utilities
 # - blackhole-16ch: (https://github.com/ExistentialAudio/BlackHole) Virtual sound card - allows audio routing
