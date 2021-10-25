@@ -28,4 +28,3 @@ sudo mv tmpHosts /etc/hosts
 
 echo "Cleaning up home directory ..."
 rm dlHosts
-rm tmpHosts

@@ -154,9 +154,11 @@ echo "Include all dev installs: $devInstall";
 # - source $HOME/YOUR-PATH/complete-mac-setup/brewInstall.sh
 # ==============================================================================================================
 
-echo "Executing step 1 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 1 of $NUMBER_OF_STEPS: Brew Install"
+echo "=========================================================================================================\n"
 
-source brewInstall.sh
+source step-01-brewInstall.sh
 
 # ==============================================================================================================
 # 2) Updates: Update outdated utilities
@@ -165,10 +167,12 @@ source brewInstall.sh
 # - source $HOME/YOUR-PATH/complete-mac-setup/coreUtilitiesUpdate.sh
 # ==============================================================================================================
 
-echo "Executing step 2 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 2 of $NUMBER_OF_STEPS: Update core utilities"
+echo "=========================================================================================================\n"
 
 if [ $coreUtilitiesUpdate == TRUE ]; then
-    source coreUtilitiesUpdate.sh
+    source step-02-coreUtilitiesUpdate.sh
 else
     echo "Excluding core utility updates ..."
 fi
@@ -180,10 +184,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/terminalUtilities.sh
 # ==============================================================================================================
 
-echo "Executing step 3 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 3 of $NUMBER_OF_STEPS: Terminal utilities"
+echo "=========================================================================================================\n"
 
 if [ $terminalUtilities == TRUE ]; then
-    source terminalUtilities.sh
+    source step-03-terminalUtilities.sh
 else
     echo "Excluding terminal utility packages ..."
 fi
@@ -195,10 +201,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/languageSupport.sh
 # ==============================================================================================================
 
-echo "Executing step 4 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 4 of $NUMBER_OF_STEPS: Language support"
+echo "=========================================================================================================\n"
 
 if [ $languageSupport == TRUE ]; then
-    source languageSupport.sh
+    source step-04-languageSupport.sh
 else
     echo "Excluding language support packages ..."
 fi
@@ -210,10 +218,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/vcsSupport.sh
 # ==============================================================================================================
 
-echo "Executing step 5 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 5 of $NUMBER_OF_STEPS: VCS support"
+echo "=========================================================================================================\n"
 
 if [ $vcsSupport == TRUE ]; then
-    source vcsSupport.sh
+    source step-05-vcsSupport.sh
 else
     echo "Excluding language support packages ..."
 fi
@@ -225,10 +235,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/cloudSupport.sh
 # ==============================================================================================================
 
-echo "Executing step 6 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 6 of $NUMBER_OF_STEPS: Cloud support"
+echo "=========================================================================================================\n"
 
 if [ $cloudSupport == TRUE ]; then
-    source cloudSupport.sh
+    source step-06-cloudSupport.sh
 else
     echo "Excluding language support packages ..."
 fi
@@ -237,9 +249,9 @@ fi
 # 7) Clean up brew installs
 # ==============================================================================================================
 
-echo "Executing step 7 of $NUMBER_OF_STEPS"
-
-echo "Cleaning up brew installs ..."
+echo "\n========================================================================================================="
+echo "Executing step 7 of $NUMBER_OF_STEPS: Cleaning up brew installs ..."
+echo "=========================================================================================================\n"
 
 brew cleanup
 
@@ -252,10 +264,12 @@ echo "Brew installs cleaned"
 # - source $HOME/YOUR-PATH/complete-mac-setup/personalUtilities.sh
 # ==============================================================================================================
 
-echo "Executing step 8 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 8 of $NUMBER_OF_STEPS: Personal utilities"
+echo "=========================================================================================================\n"
 
 if [ $personalUtils == TRUE ]; then
-    source personalUtilities.sh
+    source step-08-personalUtilities.sh
 else
     echo "Excluding personal utilities ..."
 fi
@@ -267,10 +281,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/personalApps.sh
 # ==============================================================================================================
 
-echo "Executing step 9 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 9 of $NUMBER_OF_STEPS: Personal apps"
+echo "=========================================================================================================\n"
 
 if [ $personalApps == TRUE ]; then
-    source personalApps.sh
+    source step-09-personalApps.sh
 else
     echo "Excluding personal apps ..."
 fi
@@ -282,10 +298,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/browserSupport.sh
 # ==============================================================================================================
 
-echo "Executing step 10 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 10 of $NUMBER_OF_STEPS: Browser support"
+echo "=========================================================================================================\n"
 
 if [ $browsersSupport == TRUE ]; then
-    source browserSupport.sh
+    source step-10-browserSupport.sh
 else
     echo "Excluding third party browsers ..."
 fi
@@ -296,10 +314,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/vpnSupport.sh
 # ==============================================================================================================
 
-echo "Executing step 11 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 11 of $NUMBER_OF_STEPS: VPN support"
+echo "=========================================================================================================\n"
 
 if [ $vpnSupport == TRUE ]; then
-    source vpnSupport.sh
+    source step-11-vpnSupport.sh
 else
     echo "Excluding vpn support ..."
 fi
@@ -311,10 +331,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/developerSupport.sh
 # ==============================================================================================================
 
-echo "Executing step 12 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 12 of $NUMBER_OF_STEPS: Developer support"
+echo "=========================================================================================================\n"
 
 if [ $developerSupport == TRUE ]; then
-    source developerSupport.sh
+    source step-12-developerSupport.sh
 else
     echo "Excluding language support packages..."
 fi
@@ -326,10 +348,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/gameSupport.sh
 # ==============================================================================================================
 
-echo "Executing step 13 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 13 of $NUMBER_OF_STEPS: Game support"
+echo "=========================================================================================================\n"
 
 if [ $gameSupport == TRUE ]; then
-    source gameSupport.sh
+    source step-13-gameSupport.sh
 else
     echo "Excluding language support packages..."
 fi
@@ -341,10 +365,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/additionalFonts.sh
 # ==============================================================================================================
 
-echo "Executing step 14 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 14 of $NUMBER_OF_STEPS: Additional fonts"
+echo "=========================================================================================================\n"
 
 if [ $additionalFonts == TRUE ]; then
-    source additionalFonts.sh
+    source step-14-additionalFonts.sh
 else
     echo "Excluding additional fonts..."
 fi
@@ -356,10 +382,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/pythonPackages.sh
 # ==============================================================================================================
 
-echo "Executing step 15 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 15 of $NUMBER_OF_STEPS: Python Packages"
+echo "=========================================================================================================\n"
 
 if [ $pythonPackages == TRUE ]; then
-    source pythonPackages.sh
+    source step-15-pythonPackages.sh
 else
     echo "Excluding python packages..."
 fi
@@ -371,10 +399,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/rubyGems.sh
 # ==============================================================================================================
 
-echo "Executing step 16 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 16 of $NUMBER_OF_STEPS: Ruby gems"
+echo "=========================================================================================================\n"
 
 if [ $rubyGems == TRUE ]; then
-    source rubyGems.sh
+    source step-16-rubyGems.sh
 else
     echo "Excluding ruby gems ..."
 fi
@@ -383,7 +413,9 @@ fi
 # 17) Install Npm
 # ==============================================================================================================
 
-echo "Executing step 17 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 17 of $NUMBER_OF_STEPS: Npm"
+echo "=========================================================================================================\n"
 
 echo "Installing global npm packages ..."
 
@@ -398,10 +430,12 @@ echo "NPM Installed"
 # - source $HOME/YOUR-PATH/complete-mac-setup/macOsConfig.sh
 # ==============================================================================================================
 
-echo "Executing step 18 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 18 of $NUMBER_OF_STEPS: Configure macOS"
+echo "=========================================================================================================\n"
 
 if [ $macOsConfig == TRUE ]; then
-    source macOsConfig.sh
+    source step-18-macOsConfig.sh
 else
     echo "Excluding macOS config ..."
 fi
@@ -410,7 +444,14 @@ fi
 # 19) Create Additional Directories
 # ==============================================================================================================
 
-echo "Executing step 19 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 19 of $NUMBER_OF_STEPS: Configure additional directories"
+echo "=========================================================================================================\n"
+
+echo "Make sure were in the HOME directory ..."
+
+cd $HOME
+pwd
 
 echo "Creating additional folder structure ..."
 
@@ -418,19 +459,27 @@ echo "Creating additional folder structure ..."
 [[ ! -d Tools ]] && mkdir Tools
 [[ ! -d Data ]] && mkdir Data
 
+[ -d "$HOME/Repository" ] && echo "Directory $HOME/Repository exists." || echo "Error: Directory $HOME/Repository does not exists."
+[ -d "$HOME/Tools" ] && echo "Directory $HOME/Tools exists." || echo "Error: Directory $HOME/Tools does not exists."
+[ -d "$HOME/Data" ] && echo "Directory $HOME/Data exists." || echo "Error: Directory $HOME/Data does not exists."
+
+
 echo "Adding folders to Finder side bar ..."
 
-mysides add example file:///$HOME/Repository
-mysides add example file:///$HOME/Tools
-mysides add example file:///$HOME/Data
+mysides add Repository file:///$HOME/Repository
+mysides add Tools file:///$HOME/Tools
+mysides add Data file:///$HOME/Data
 
 # ==============================================================================================================
 # 20) Install OH MY ZSH
 # - https://github.com/ohmyzsh/ohmyzsh#unattended-install
 # ==============================================================================================================
 
-echo "Executing step 20 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 20 of $NUMBER_OF_STEPS: Install Oh My ZSH"
+echo "=========================================================================================================\n"
 
+pwd
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # ==============================================================================================================
@@ -440,10 +489,16 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 # - source $HOME/YOUR-PATH/complete-mac-setup/ohMyZshPlugins.sh
 # ==============================================================================================================
 
-echo "Executing step 21 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 21 of $NUMBER_OF_STEPS: Install Oh My ZSH Plugins"
+echo "=========================================================================================================\n"
 
 if [ $ohMyZshPlugins == TRUE ]; then
-    source ohMyZshPlugins.sh
+    # Make sure parent script can see child scripts otherwise they will fail to run
+    cd $SCRIPT_DIR
+    pwd
+
+    source step-21-ohMyZshPlugins.sh
 else
     echo "Excluding ZSH plugins and themes ..."
 fi
@@ -455,18 +510,20 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/configureZshAndBash.sh
 # ==============================================================================================================
 
-echo "Executing step 22 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 22 of $NUMBER_OF_STEPS: Configure ZSH and BASH"
+echo "=========================================================================================================\n"
 
 if [ $configureZshAndBash == TRUE ]; then
     # Make sure parent script can see child scripts otherwise they will fail to run
     cd $SCRIPT_DIR
+    pwd
 
-    source configureZshAndBash.sh
+    source step-22-configureZshAndBash.sh
 else
     echo "Excluding ZSH and Bash configs ..."
 fi
 
-ls -alh
 # ==============================================================================================================
 # 23) Configure iTerm color profiles
 #
@@ -474,13 +531,16 @@ ls -alh
 # - source $HOME/YOUR-PATH/complete-mac-setup/iTermColorSchemes.sh
 # ==============================================================================================================
 
-echo "Executing step 23 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 23 of $NUMBER_OF_STEPS: Install iTerm color schemes"
+echo "=========================================================================================================\n"
 
 if [ $iTermColorSchemes == TRUE ]; then
     # Make sure parent script can see child scripts otherwise they will fail to run
     cd $SCRIPT_DIR
-    
-    source iTermColorSchemes.sh
+    pwd
+
+    source step-23-iTermColorSchemes.sh
 else
     echo "Excluding iTerm color schemes ..."
 fi
@@ -492,10 +552,16 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/installSDKMAN.sh
 # ==============================================================================================================
 
-echo "Executing step 24 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 24 of $NUMBER_OF_STEPS: Install SDKMAN"
+echo "=========================================================================================================\n"
 
 if [ $installSDKMAN == TRUE ]; then
-    source installSDKMAN.sh
+    # Make sure parent script can see child scripts otherwise they will fail to run
+    cd $SCRIPT_DIR
+    pwd
+
+    source step-24-installSDKMAN.sh
 else
     echo "Excluding SDKMAN install ..."
 fi
@@ -507,10 +573,12 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/sdkPackageInstalls.sh
 # ==============================================================================================================
 
-echo "Executing step 25 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 25 of $NUMBER_OF_STEPS: Installing Java / Maven / Gradle"
+echo "=========================================================================================================\n"
 
 if [ $sdkPackageInstalls == TRUE ]; then
-    source sdkPackageInstalls.sh
+    source step-25-sdkPackageInstalls.sh
 else
     echo "Excluding Java / Maven / Gradle installs  ..."
 fi
@@ -522,9 +590,11 @@ fi
 # - source $HOME/YOUR-PATH/complete-mac-setup/configureHosts.sh
 # ==============================================================================================================
 
-echo "Executing step 26 of $NUMBER_OF_STEPS"
+echo "\n========================================================================================================="
+echo "Executing step 26 of $NUMBER_OF_STEPS: Configuring hosts file"
+echo "=========================================================================================================\n"
 
-source configureHosts.sh
+source step-26-configureHosts.sh
 
 echo "Bootstrapping complete, final step ..."
 

@@ -7,6 +7,7 @@
 # Failed installs:
 # - font-liberation-mono: could not be found
 # - font-liberation-sans: could not be found
+# - font-ubuntu-mono-powerline: could not be found
 # ==============================================================================================================
 FONTS=(
     font-hack-nerd-font
@@ -30,7 +31,6 @@ FONTS=(
     font-source-code-pro-for-powerline
     font-source-sans-pro
     font-ubuntu 
-    font-ubuntu-mono-powerline
     font-covered-by-your-grace
     font-hack
     font-league-gothic

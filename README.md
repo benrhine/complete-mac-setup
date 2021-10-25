@@ -3,6 +3,8 @@ Opinionated bash scripts to fully setup a mac from start to finish with one comm
 
 The primary intent of this script is to be a one stop shop to setup a new mac from scratch by running a single script. While the script is designed to be idempotent, I'm not a 100% sure thats true - at a minimum it is true for most cases. If part of the script fails you should be able to run it again and it should pick up where it left off. If you are running the script again you may see warnings that some items have already been installed.
 
+Getting this script to run correctly without failures is the results of multiple weekends and many evenings. At this point I'm not certain the time savings of creating the script justifies the time put into creating it but I sincearly hope that many of you can put it to good use.
+
 ### A word on the She-bang (Important!!!)
 While this might seem a bit odd to call out as something so important it took alot of work to really understand this and what it really means in terms of running the script. The script that inspired this used the `#!/usr/bin/env bash` she-bang which is fine but it is different than the standard `#!/user/bin`. [This](https://unix.stackexchange.com/questions/206350/what-is-the-difference-if-i-start-bash-with-bin-bash-or-usr-bin-env-bash) does a good job of explaining some of the differences of how this behaves or changes behavior. I would have left this alone as in reading the above and the links below asnit appears the `#!/usr/bin/env bash` declaration is good for portability but I was really hoping to not have to manually grant full disk access to terminal prior to running the script. Below are my she-bang testing results ...
 - `#!/user/bin` does not seem to actually run on macOS Catalina anymore
@@ -22,11 +24,19 @@ Assuming this is a fresh macOS install start by opening `System Preferences -> S
 
 If terminal asks you for permissions at any point tell it ok. I dont believe that it should ask unless you are trying to use auto complete.
 
-With terminal open `cd` into `YOUR-LOCATION/complete-mac-set`, the script assumes you dropped the folder on the desktop. If you placed it somehwere other than the desktop you will need to edit the `mac-bootstrap.sh` and update the `SCRIPT_DIR` to your location. Once in the scripts directory run `./mac-bootstrap.sh`. When the script starts it will ask you for your password (which you will have to enter a total of 3 times during the script run) followed by asking you to press enter to allow brew to install the xcode dependencies necessary to run the script. After that the script will prompt you to answer your password twice more before completing. The script has basic error handling and in most cases if something fails it should output a message then continue on.
+With terminal open `cd` into `YOUR-LOCATION/complete-mac-set`, the script assumes you dropped the folder on the desktop. If you placed it somehwere other than the desktop you will need to edit the `mac-bootstrap.sh` and update the `SCRIPT_DIR` to your location. Once in the scripts directory run `./mac-bootstrap.sh`. When the script starts it will ask you for your password (which you will have to enter a total of 4? times during the script run) followed by asking you to press enter to allow brew to install the xcode dependencies necessary to run the script. After that the script will prompt you to answer your password twice more before completing. The script has basic error handling and in most cases if something fails it should output a message then continue on.
+
+#### Recommendation
+I recommend piping the script output to a log file just in the event anything goes wrong it will be somewhat easier to debug. Instead of from your directory running `./mac-bootstrap.sh` run instead `./mac-bootstrap.sh | tee -a $HOME/Desktop/complete-mac-setup/install-log`
 
 ### Post Script Manual Configuration
 
 In order for everything to appear correctly once the script completes, in terminal, `Preferences -> Profiles -> Text -> Font | Change -> Select Hack`. Once this is done everything in terminal should display correctly.
+
+## Things I would like to add
+- automatic Git configuration
+- auto install of browser plugins
+	- There are a few stack overflow articles about this but they are all significantly dated and not very clear on if there is a actual way to do this.
 
 ### Install Options
 
