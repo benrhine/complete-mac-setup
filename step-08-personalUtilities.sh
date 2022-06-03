@@ -16,6 +16,7 @@ UTIL_CASKS=(
     blackhole-16ch
     gas-mask
     geektool
+    geekbench
     gpg-suite
     monolingual
     mysides
