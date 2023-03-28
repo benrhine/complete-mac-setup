@@ -14,6 +14,9 @@ While this might seem a bit odd to call out as something so important it took al
 
 - https://developer.apple.com/forums/thread/672023
 
+### Other links
+- https://medium.com/@Dylan.Wang/install-colorls-on-macos-mojave-10-14-6-970834959cdb
+
 ### Preparing to run the Script (depricated)
 
 Note: This step is no longer necessary after switching the script she-bang to `#!/bin/sh`
