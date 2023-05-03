@@ -5,6 +5,7 @@
 AWS_SUPPORT=(
 	awscli
     aws-console
+    serverless
 )
 
 echo "Installing AWS support packages..."
