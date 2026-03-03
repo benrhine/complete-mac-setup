@@ -12,8 +12,9 @@ LANGUAGE_SUPPORT=(
     python
     pyenv
     pypy
+    pipx
     rabbitmq
-    ruby
+    ruby-install
     yarn
 )
 

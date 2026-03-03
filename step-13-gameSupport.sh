@@ -1,15 +1,16 @@
 #!/bin/sh
 # ==============================================================================================================
 # Install game support: This installs game stores and support for game streaming and emulation
+# - crossover
+# - moonlight
+# - epic-games
+# - gog-galaxy
+# - minecraft
+# - parsec
+# - steam
 # ==============================================================================================================
 GAMES=(
-    epic-games
-    gog-galaxy
-    minecraft
-    moonlight
     openemu
-    parsec
-    steam
     retroarch-metal
     pcsx2
     outfox

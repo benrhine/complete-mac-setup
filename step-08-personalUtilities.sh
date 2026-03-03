@@ -23,9 +23,12 @@ UTIL_CASKS=(
     ubersicht
     vlc
     spek
+    fnm
+    yt-dlp/taps/yt-dlp
     tailscale
     wireguard-tools
     ollama
+    ollama-gui
 )
 
 echo "Installing personal utilities ..."
@@ -33,5 +36,10 @@ echo "Installing personal utilities ..."
 for val in "${UTIL_CASKS[@]}"; do
     brew install $val || simpleError "$val"
 done
+
+brew services start ollama
+
+# Create the require config for yt-dlp
+echo "# Set Quality\n-f 'ba'\n\n# Always Extract Audio\n-x \n\n# Do not copy the mtime\n--no-mtime\n\n# Output Format\n--audio-format wav\n-o \"%(title)s.%(ext)s\"" > yt-dlp.conf
 
 echo "Personal utilities installed"

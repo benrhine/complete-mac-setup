@@ -57,8 +57,9 @@ simpleError() {
 }
 
 export START_TIME=$(($(date +%s)))
-export NUMBER_OF_STEPS=26
+export NUMBER_OF_STEPS=27
 export SCRIPT_DIR=$HOME/Desktop/complete-mac-setup
+export ICLOUD_DRIVE=$HOME/Library/Mobile Documents/com~apple~CloudDocs
 
 echo "Starting bootstrapping at $START_TIME"
 # ==============================================================================================================

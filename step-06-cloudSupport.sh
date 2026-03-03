@@ -6,6 +6,13 @@ AWS_SUPPORT=(
 	awscli
   aws-console
   serverless
+  eksct
+  minikube
+  kubernetes-cli
+  hashicorp/tap/terraform
+  yq
+  helm
+  trivy
 )
 
 echo "Installing AWS support packages..."

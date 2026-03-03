@@ -17,12 +17,24 @@ DEVELOP=(
     cherry-studio
     discord
     github
+    asciidocfx
+)
+
+# - pieces
+DEVELOP_2=(
+    vercel-cli
+    sqlite
+    supabase
 )
 
 echo "Installing developer tools..."
 
 for val in "${DEVELOP[@]}"; do
     brew install --cask $val || simpleError "$val"
+done
+
+for val in "${DEVELOP_2[@]}"; do
+    brew install $val || simpleError "$val"
 done
 
 echo "Developer tools installed"

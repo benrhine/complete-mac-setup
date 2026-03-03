@@ -25,7 +25,9 @@ APPLICATIONS=(
     obsidian
     istat-menus
     balenaetcher
+    ableton-live-suite
     hiddenbar
+    ollama-app
 )
 
 echo "Installing general / personal apps..."
