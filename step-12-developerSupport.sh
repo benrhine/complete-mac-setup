@@ -1,16 +1,22 @@
 #!/bin/sh
 # ==============================================================================================================
 # Install Developer Tools
+# - antigravity
+# - vagrant
+# - macvim
 # ==============================================================================================================
 DEVELOP=(
     docker
     intellij-idea-ce
     intellij-idea
     iterm2
-    macvim
+    antigravity
     postman
     slack
-    vagrant
+    claude-code
+    cherry-studio
+    discord
+    github
 )
 
 echo "Installing developer tools..."

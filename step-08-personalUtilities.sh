@@ -11,18 +11,21 @@
 # - ubersicht: (https://tracesof.net/uebersicht/) Great mac theming tool 
 # - vlc: Plays almost every kind of media
 # - monolingual: remove extra language files
+# - bear: alternative to evernote but i dont really like
 # ==============================================================================================================
 UTIL_CASKS=(
-    blackhole-16ch
     gas-mask
     geektool
     geekbench
-    gpg-suite
     monolingual
     mysides
     sublime-text
     ubersicht
     vlc
+    spek
+    tailscale
+    wireguard-tools
+    ollama
 )
 
 echo "Installing personal utilities ..."

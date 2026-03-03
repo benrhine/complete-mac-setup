@@ -43,10 +43,12 @@
 # - https://www.xmodulo.com/catch-handle-errors-bash.html
 # - https://newbedev.com/is-there-a-try-catch-command-in-bash
 # - https://medium.com/@Dylan.Wang/install-colorls-on-macos-mojave-10-14-6-970834959cdb - install colorls
-#- https://stackoverflow.com/questions/54818827/install-colorls-on-macos-and-zsh
+# - https://stackoverflow.com/questions/54818827/install-colorls-on-macos-and-zsh
 # - https://community.jamf.com/t5/jamf-pro/finder-settings-script/td-p/186534
 # - https://scriptingosx.com/2019/08/moving-to-zsh-part-8-scripting-zsh/
 # - https://stackoverflow.com/questions/1401482/yyyy-mm-dd-format-date-in-shell-script
+# - https://gist.github.com/codeinthehole/26b37efa67041e1307db
+# - https://gist.github.com/CliffordAnderson/817777b5dc0e67769e4b
 # ==============================================================================================================
 # Simple error handler
 # ==============================================================================================================

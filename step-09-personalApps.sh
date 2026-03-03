@@ -2,18 +2,30 @@
 # ==============================================================================================================
 # General / Personal applications we want installed
 # Extras I want sometime
-# - flux (sort of replaced by native mac functionality)
 # - folding-at-home
+# - evernote
+# - rambox
+# - utm - free virtualization
+# - veracrypt
+
 # ==============================================================================================================
 APPLICATIONS=(
-    evernote
     google-drive
     mixed-in-key
     obs
     parallels
-    rambox
     transmit
     twitch
+    flux
+    zoom
+    xld
+    vuescan
+    rekordbox
+    openaudible
+    obsidian
+    istat-menus
+    balenaetcher
+    hiddenbar
 )
 
 echo "Installing general / personal apps..."

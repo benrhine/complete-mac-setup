@@ -4,6 +4,7 @@
 # - https://macos-defaults.com/dock/autohide.html
 # - https://developer.apple.com/documentation/devicemanagement/dock
 # - https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+# - https://dev.to/v3frankie/setup-your-mac-for-development-2020-edition-1c8a
 # ==============================================================================================================
 echo "Configuring macOS..."
 

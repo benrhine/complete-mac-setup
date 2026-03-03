@@ -1,9 +1,15 @@
 # complete-mac-setup
 Opinionated bash scripts to fully setup a mac from start to finish with one command.
 
-The primary intent of this script is to be a one stop shop to setup a new mac from scratch by running a single script. While the script is designed to be idempotent, I'm not a 100% sure thats true - at a minimum it is true for most cases. If part of the script fails you should be able to run it again and it should pick up where it left off. If you are running the script again you may see warnings that some items have already been installed.
+The primary intent of this script is to be a one-stop shop to setup a new mac from scratch by running a single script. While the script is designed to be idempotent, I'm not a 100% sure thats true - at a minimum it is true for most cases. If part of the script fails you should be able to run it again and it should pick up where it left off. If you are running the script again you may see warnings that some items have already been installed.
 
-Getting this script to run correctly without failures is the results of multiple weekends and many evenings. At this point I'm not certain the time savings of creating the script justifies the time put into creating it but I sincearly hope that many of you can put it to good use.
+Getting this script to run correctly without failures is the results of multiple weekends and many evenings. At this point I'm not certain the time savings of creating the script justifies the time put into creating it but I sincerely hope that many of you can put it to good use.
+
+## 2026 TODOs
+
+- turn xcode installation back on
+- how to install amphetamine
+
 
 ### A word on the She-bang (Important!!!)
 While this might seem a bit odd to call out as something so important it took alot of work to really understand this and what it really means in terms of running the script. The script that inspired this used the `#!/usr/bin/env bash` she-bang which is fine but it is different than the standard `#!/user/bin`. [This](https://unix.stackexchange.com/questions/206350/what-is-the-difference-if-i-start-bash-with-bin-bash-or-usr-bin-env-bash) does a good job of explaining some of the differences of how this behaves or changes behavior. I would have left this alone as in reading the above and the links below asnit appears the `#!/usr/bin/env bash` declaration is good for portability but I was really hoping to not have to manually grant full disk access to terminal prior to running the script. Below are my she-bang testing results ...
@@ -99,7 +105,7 @@ di) Configure multiple dev installs at once
 
 The script normally takes approximately 1 hour to run.
 
-#### Total install size
+#### Total installation size
 
 This script installs approximately 30 gigs worth of stuff (I think 10g of that is xcode for some reason). My starting vm for testing is 24g and my ending size is approximately 54g.
 

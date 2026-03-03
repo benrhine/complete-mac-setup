@@ -1,6 +1,7 @@
 #!/bin/sh
 # ==============================================================================================================
 # Scripting language support for local environment
+# - python3
 # ==============================================================================================================
 LANGUAGE_SUPPORT=(
     go
@@ -9,7 +10,7 @@ LANGUAGE_SUPPORT=(
     npm
     postgresql
     python
-    python3
+    pyenv
     pypy
     rabbitmq
     ruby

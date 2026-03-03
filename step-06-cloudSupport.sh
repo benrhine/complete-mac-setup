@@ -4,9 +4,8 @@
 # ==============================================================================================================
 AWS_SUPPORT=(
 	awscli
-    aws-console
-    serverless
-    hiddenbar
+  aws-console
+  serverless
 )
 
 echo "Installing AWS support packages..."
@@ -22,7 +21,7 @@ echo "AWS support installed"
 # ==============================================================================================================
 
 GCP_SUPPORT=(
-	google-cloud-sdk
+	gcloud-cli
 )
 
 echo "GCP support packages..."

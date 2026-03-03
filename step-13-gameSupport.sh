@@ -11,6 +11,8 @@ GAMES=(
     parsec
     steam
     retroarch-metal
+    pcsx2
+    outfox
 )
 
 echo "Installing game support..."
@@ -18,5 +20,7 @@ echo "Installing game support..."
 for val in "${GAMES[@]}"; do
     brew install --cask $val || simpleError "$val"
 done
+
+brew install rpcs3
 
 echo "Game support installed"
