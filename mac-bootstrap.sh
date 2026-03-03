@@ -599,6 +599,12 @@ echo "==========================================================================
 
 source step-26-configureHosts.sh
 
+echo "\n========================================================================================================="
+echo "Executing step 27 of $NUMBER_OF_STEPS: System configuration"
+echo "=========================================================================================================\n"
+
+source step-27-configure-system.sh
+
 echo "Bootstrapping complete, final step ..."
 
 export END_TIME=$(($(date +%s)))
