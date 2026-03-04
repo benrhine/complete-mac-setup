@@ -12,6 +12,7 @@
 # - vlc: Plays almost every kind of media
 # - monolingual: remove extra language files
 # - bear: alternative to evernote but i dont really like
+# - ollama-gui: nor sure this is valid
 # ==============================================================================================================
 UTIL_CASKS=(
     gas-mask
@@ -28,7 +29,6 @@ UTIL_CASKS=(
     tailscale
     wireguard-tools
     ollama
-    ollama-gui
 )
 
 echo "Installing personal utilities ..."

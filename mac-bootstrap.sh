@@ -59,7 +59,7 @@ simpleError() {
 export START_TIME=$(($(date +%s)))
 export NUMBER_OF_STEPS=27
 export SCRIPT_DIR=$HOME/Desktop/complete-mac-setup
-export ICLOUD_DRIVE=$HOME/Library/Mobile Documents/com~apple~CloudDocs
+export ICLOUD_DRIVE="$HOME/Library/Mobile\ Documents/com~apple~CloudDocs"
 
 echo "Starting bootstrapping at $START_TIME"
 # ==============================================================================================================
@@ -603,6 +603,9 @@ echo "\n========================================================================
 echo "Executing step 27 of $NUMBER_OF_STEPS: System configuration"
 echo "=========================================================================================================\n"
 
+# Make sure parent script can see child scripts otherwise they will fail to run
+cd $SCRIPT_DIR
+pwd
 source step-27-configure-system.sh
 
 echo "Bootstrapping complete, final step ..."
