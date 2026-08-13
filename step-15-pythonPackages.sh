@@ -28,4 +28,7 @@ pipx completions
 # https://graphify.net/graphify-claude-code-integration.html
 pipx install graphifyy
 
+# This should install graphify into claude code
+graphify install
+
 echo "Python packages installed"
