@@ -25,4 +25,7 @@ done
 pipx ensurepath
 pipx completions
 
+# https://graphify.net/graphify-claude-code-integration.html
+pipx install graphifyy
+
 echo "Python packages installed"
